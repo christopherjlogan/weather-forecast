@@ -1,11 +1,9 @@
 package clogan.weatherforecast.beans;
 
-import java.util.ArrayList;
-
-import clogan.weatherforecast.domain.Region;
+import clogan.weatherforecast.domain.StationList;
 
 public interface RegionService {
 	
-	public ArrayList<Region> getRegionList();
+	public StationList getRegionList();
 
 }

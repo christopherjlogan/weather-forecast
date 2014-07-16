@@ -1,27 +1,38 @@
 <!doctype html>
 <html>
-	<head>
-		<title>Weather Forecast</title>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	</head>
-	<body>
-		<h1>Get Your Weather Forecast Here</h1>
-		<div>Select your station: <select id="regions"></select></div>
-		<script>
+<head>
+<title>Weather Forecast</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1>Get Your Weather Forecast Here</h1>
+	<div>
+		Select your station: <select id="regions"></select>
+	</div>
+	<script>
 		var select = document.getElementById("regions");
-		$.getJSON('regions', function(data){
-			$.each(data, function(index,item) {
+		$.getJSON('regions', function(data) {
+			$.each(data, function(index, item) {
 				var option = document.createElement("option");
 				option.text = item.name;
-				select.add(option,index); 
-	    	});
-	    });
-		$("#regions").change(function() {
-			$.getJSON('forecast?city=' + $("#regions option:selected").text(), function(data){
-				$("#forecastdata").html("<b>Forecast for station " + data.station + "</b>: " + "Weather is " + data.weather + ", with a temperature of " + data.temperatureString);
-	    	});
+				select.add(option, index);
+			});
 		});
-		</script>
-		<p id="forecastdata"></p>
-	</body>
+		$("#regions").change(
+				function() {
+					$.getJSON('forecast?city='
+							+ $("#regions option:selected").text(), function(
+							data) {
+						$("#forecastdata").html(
+								"<b>Forecast for station " + data.station
+										+ "</b>: " + "Weather is "
+										+ data.weather
+										+ ", with a temperature of "
+										+ data.temperatureString);
+					});
+				});
+	</script>
+	<p id="forecastdata"></p>
+</body>
 </html>
