@@ -1,7 +1,5 @@
 package clogan.weatherforecast.domain;
 
-import java.net.URL;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -14,7 +12,7 @@ public class Region {
 	@XmlElement(name="station_id")
 	private String name;
 	@XmlElement(name="xml_url")
-	private URL xmlUrl;
+	private String xmlUrl;
 	
 	public Region() {
 		
@@ -24,7 +22,7 @@ public class Region {
 		this.name = name;
 	}
 	
-	public Region (String name, URL xmlUrl) {
+	public Region (String name, String xmlUrl) {
 		this.name = name;
 		this.xmlUrl = xmlUrl;
 	}
@@ -37,11 +35,11 @@ public class Region {
 		this.name = name;
 	}
 	
-	public URL getXmlUrl() {
+	public String getXmlUrl() {
 		return xmlUrl;
 	}
 
-	public void setXmlUrl(URL xmlUrl) {
+	public void setXmlUrl(String xmlUrl) {
 		this.xmlUrl = xmlUrl;
 	}
 	

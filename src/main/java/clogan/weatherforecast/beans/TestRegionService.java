@@ -2,8 +2,6 @@ package clogan.weatherforecast.beans;
 
 import java.util.ArrayList;
 
-import org.springframework.stereotype.Service;
-
 import clogan.weatherforecast.domain.Region;
 import clogan.weatherforecast.domain.StationList;
 

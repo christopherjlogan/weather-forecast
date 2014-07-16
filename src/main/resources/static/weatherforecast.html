@@ -8,10 +8,11 @@
 <body>
 	<h1>Get Your Weather Forecast Here</h1>
 	<div>
-		Select your station: <select id="regions"></select>
+		Select your station: <select id="regions"></select><span id="message"></span>
 	</div>
 	<script>
 		var select = document.getElementById("regions");
+		
 		$.getJSON('regions', function(data) {
 			$.each(data, function(index, item) {
 				var option = document.createElement("option");
@@ -26,7 +27,7 @@
 							data) {
 						$("#forecastdata").html(
 								"<b>Forecast for station " + data.station
-										+ "</b>: " + "Weather is "
+										+ "</b>: " + "In " + data.location + ", the weather is "
 										+ data.weather
 										+ ", with a temperature of "
 										+ data.temperatureString);
