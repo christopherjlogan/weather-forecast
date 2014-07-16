@@ -22,9 +22,6 @@ public class WeatherForecastController {
 	
 	@RequestMapping("/regions")
 	public ArrayList<Region> getRegions() {
-		/*ArrayList<Region> regionList = new ArrayList<Region>();
-		regionList.add(new Region("FL"));
-		regionList.add(new Region("MA"));*/
 		logger.debug("Received request for regions");
 		return this.regionService.getRegionList();
 	}
@@ -32,7 +29,7 @@ public class WeatherForecastController {
 	@RequestMapping("/forecast")
 	public Forecast getCityForecast(@RequestParam(value="city", required=true) String city) {
 		logger.debug("Received request for forecast:" + city);
-		return new Forecast("Orlando", 98.6);
+		return this.forecastService.getForecast(city);
 	}
 	
 	@Autowired

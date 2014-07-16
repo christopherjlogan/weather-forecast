@@ -2,32 +2,42 @@ package clogan.weatherforecast.domain;
 
 public class Forecast {
 	
-	private String city;
-	private double temp;
+	private String station;
+	private String weather;
+	private String temperatureString;
 	
 	public Forecast() {
 		
 	}
 	
-	public Forecast(String city, double temp) {
-		this.setCity(city);
-		this.setTemp(temp);
+	public Forecast(String station, String weather, String temperatureString) {
+		this.station = station;
+		this.weather = weather;
+		this.temperatureString = temperatureString;
 	}
 
-	public String getCity() {
-		return city;
+	public String getStation() {
+		return station;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public void setStation(String station) {
+		this.station = station;
 	}
 
-	public double getTemp() {
-		return temp;
+	public String getWeather() {
+		return weather;
 	}
 
-	public void setTemp(double temp) {
-		this.temp = temp;
+	public void setWeather(String weather) {
+		this.weather = weather;
+	}
+
+	public String getTemperatureString() {
+		return temperatureString;
+	}
+
+	public void setTemperatureString(String temperatureString) {
+		this.temperatureString = temperatureString;
 	}
 	
 }

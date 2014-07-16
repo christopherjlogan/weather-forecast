@@ -12,8 +12,8 @@ public class TestRegionService implements RegionService {
 	@Override
 	public ArrayList<Region> getRegionList() {
 		ArrayList<Region> regionList = new ArrayList<Region>();
-		regionList.add(new Region("FL"));
-		regionList.add(new Region("MA"));
+		regionList.add(new Region("KMCO"));
+		regionList.add(new Region("KMIA"));
 		return regionList;
 	}
 
