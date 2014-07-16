@@ -3,14 +3,20 @@
 	<head>
 		<title>Weather Forecast</title>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script>
-			$(document).ready(function(){
-    			$("#regions").hide();	
-			});
-		</script>
 	</head>
 	<body>
-		<h1>Get Your Weather Forecast Here!</h1>
-		Select your region: <select id="regions"></select>
+		<h1>Get Your Weather Forecast Here</h1>
+		Select your station: <select id="regions"></select>
+		<script>
+		var select = document.getElementById("regions");
+		$.getJSON('regions', function(data){
+			$.each(data, function(index,item) {
+				var option = document.createElement("option");
+				option.text = item.name;
+				select.add(option,index); 
+	    	});
+	    });
+		</script>
+		<div id="forecastdata"></div>
 	</body>
 </html>
